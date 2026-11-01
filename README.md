@@ -4,13 +4,13 @@ A Machine Learning project built with Python to predict whether a passenger woul
 
 The project covers the complete Machine Learning workflow, starting with data exploration and preprocessing, followed by model training, evaluation, and deployment through an interactive **Streamlit web application**.
 
-##Project Overview
+## Project Overview
 
 The goal of this project is to develop a predictive model capable of estimating passenger survival probabilities using features such as age, gender, passenger class, ticket fare, family relationships, and other relevant information.
 
 The project also includes an interactive web application that allows users to explore the dataset, visualize important patterns, and make survival predictions by entering passenger details.
 
-##Project Workflow
+## Project Workflow
 
 - **Data Exploration:** Examining the Titanic dataset to understand its structure, identify patterns, and analyze relationships between passenger characteristics and survival rates.
 - **Data Preprocessing:** Handling missing values, removing unnecessary information, encoding categorical variables, and preparing the dataset for Machine Learning.
@@ -19,7 +19,7 @@ The project also includes an interactive web application that allows users to ex
 - **Model Evaluation:** Evaluating model performance using appropriate classification metrics.
 - **Model Deployment:** Integrating the trained model into an interactive Streamlit application.
 
-##Technologies Used
+## Technologies Used
 
 - **Python** – Main programming language.
 - **Pandas** – Data manipulation and preprocessing.
@@ -29,7 +29,7 @@ The project also includes an interactive web application that allows users to ex
 - **Streamlit** – Interactive web application and dashboard.
 - **Joblib** – Saving and loading the trained Machine Learning model.
 
-##Application Features
+## Application Features
 
 - Interactive dashboard for exploring Titanic passenger data.
 - Data visualizations highlighting survival patterns.
@@ -37,7 +37,7 @@ The project also includes an interactive web application that allows users to ex
 - Real-time survival predictions using the trained model.
 - Simple and user-friendly interface built with Streamlit.
 
-##Project Objectives
+## Project Objectives
 
 - Understand the complete Machine Learning workflow.
 - Gain practical experience in data cleaning and preprocessing.
@@ -45,7 +45,7 @@ The project also includes an interactive web application that allows users to ex
 - Learn how to integrate a trained Machine Learning model into a web application.
 - Develop an end-to-end Machine Learning project.
 
-##Dataset
+## Dataset
 
 The project uses the Titanic dataset, which contains passenger information and survival outcomes. It is commonly used for learning and practicing classification problems in Machine Learning.
 
