@@ -1,13 +1,28 @@
 import joblib
 import pandas as pd
-from fastapi import FastAPI
+from fastapi import FastAPI,Response
 from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = FastAPI(title = 'Titanic Survival API')
 
-model = joblib.load('titanic_model.pkl')
-scaler = joblib.load('scaler.pkl')
-model_columns = joblib.load('model_columns.pkl')
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+@app.get("/data")
+def data():
+    df = joblib.load(r"C:\Users\pc\PycharmProjects\WelcomeScreen\Mini Projects\Titanic_Project\models\data_frame.pkl")
+    return Response(df.to_json(orient="records"), media_type="application/json")
+
+
+model = joblib.load(r"C:\Users\pc\PycharmProjects\WelcomeScreen\Mini Projects\Titanic_Project\data\titanic_model.pkl")
+scaler = joblib.load(r"C:\Users\pc\PycharmProjects\WelcomeScreen\Mini Projects\Titanic_Project\models\scaler.pkl")
+model_columns = joblib.load(r"C:\Users\pc\PycharmProjects\WelcomeScreen\Mini Projects\Titanic_Project\models\model_columns.pkl")
 
 class PassengerInput(BaseModel):
     Sex: int

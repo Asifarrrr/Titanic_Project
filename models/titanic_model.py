@@ -7,7 +7,7 @@ from sklearn.preprocessing import StandardScaler
 df = None
 
 try:
-    df = pd.read_csv(r"C:\Users\pc\PycharmProjects\WelcomeScreen\Mini Projects\Titanic_Project\Titanic-Dataset.csv")
+    df = pd.read_csv(r"C:\Users\pc\PycharmProjects\WelcomeScreen\Mini Projects\Titanic_Project\data\Titanic-Dataset.csv")
 except FileNotFoundError:
     pass
 
@@ -61,6 +61,7 @@ df = df.dropna(subset = 'Embarked')
 df = pd.get_dummies(df,columns = ['Embarked','Title','Pclass'],dtype = int)
 
 df = df.rename(columns = {'Title_the Countess': 'Title_the_Countess'})
+df = df[df['Fare'] <= 100.0]
 #____________________________________ Model Ai (Logistic Regression) ____________________________________
 x = df.drop(columns = ['Survived','Last_Name','First_Name','Ticket'])
 y = df['Survived']
@@ -78,7 +79,7 @@ x_test = scaler.transform(x_test)
 model = LogisticRegression(class_weight = 'balanced')
 model.fit(x_train,y_train)
 
-joblib.dump(model,'titanic_model.pkl')
-joblib.dump(scaler,'scaler.pkl')
-joblib.dump(df,'data_frame.pkl')
-joblib.dump(list(x.columns),'model_columns.pkl')
+joblib.dump(model,r"C:\Users\pc\PycharmProjects\WelcomeScreen\Mini Projects\Titanic_Project\data\titanic_model.pkl")
+joblib.dump(scaler,r"C:\Users\pc\PycharmProjects\WelcomeScreen\Mini Projects\Titanic_Project\models\scaler.pkl")
+joblib.dump(df,r"C:\Users\pc\PycharmProjects\WelcomeScreen\Mini Projects\Titanic_Project\models\data_frame.pkl")
+joblib.dump(list(x.columns),r"C:\Users\pc\PycharmProjects\WelcomeScreen\Mini Projects\Titanic_Project\models\model_columns.pkl")
